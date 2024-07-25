@@ -1,4 +1,4 @@
 # EliminationSys
-#Dev: Kzyro, Discord: kzyro._
+Dev: Kzyro, Discord: kzyro._
 
 WIP
