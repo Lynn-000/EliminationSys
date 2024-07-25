@@ -1,2 +1,4 @@
 # EliminationSys
-ICT SBA RAHHHHHHHHHHH
+#Dev: Kzyro, Discord: kzyro._
+
+WIP
