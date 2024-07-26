@@ -1,0 +1,14 @@
+{%extends "index.html"%} 
+
+{% block title %}Home{% endblock %} {% block content
+%}
+
+<h1>Competition Bracket</h1>
+<div class = "box">
+    {% for x in teams %}
+    <div class = words>{{ x.T1Name }} ({{ x.T1Score }})</div>
+    <div class = words>{{ x.T2Name }} ({{ x.T2Score }})</div>
+    <div class = push></div>
+    {% endfor %}
+</div>
+{% endblock %}

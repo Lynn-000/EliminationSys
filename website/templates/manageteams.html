@@ -1,0 +1,27 @@
+{% extends "index.html"%} {% block title %}Manage Teams{% endblock %} {% block content
+%}
+<h1>Teams Management System</h1>
+<table id="data" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Team ID</th>
+      <th>Team Name</th>
+      <th>School</th>
+      <th>Total Score</th>
+      <th>Seed Rank (If Applicable)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in teams %}
+      <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.TName }}</td>
+        <td>{{ x.School }}</td>
+        <td>{{ x.Score }}</td>
+        <td>{{ x.seedRank }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+    

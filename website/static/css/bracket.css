@@ -1,0 +1,27 @@
+.boxcontainer{
+display: flex;
+gap: 10px;
+align-items: center;
+}
+
+
+.box{
+    width: 125px;
+    margin: 10px;
+    height: 100px;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+
+.words{
+    margin: 10px;
+    padding: 5px;
+}
+
+.push{
+    margin-bottom: 30px;
+}
