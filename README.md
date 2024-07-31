@@ -20,4 +20,8 @@ python adduser.py
 python main.py
 ```
 
+## Accessing the web UI:
+```
+127.0.0.1:5000/
+```
 
