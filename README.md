@@ -25,11 +25,11 @@ pip install -r requirements.txt
 
 ## Running the program:
 First run main.py. You can then end the process by pressing CTRL + C.
-Then run adduser.py and follow the prompt to add admin users.
+Then run adduser.py under rootdirector/website folder and follow the prompt to add admin users.
 Then run main.py again.
 ```
-python adduser.py
 python main.py
+python adduser.py
 ```
 
 ## Accessing the web UI:
