@@ -6,6 +6,7 @@ Dev: Kzyro, Discord: kzyro._
 This system is used to generate a competition bracket.
 
 ## Installation:
+Unzip the folder.
 PYTHON is REQUIRED to run the program.
 All other prerequisites are listed in the requirements.txt. Simply open command prompt and type (with the root directory of the file opened in the prompt of course):
 ```
