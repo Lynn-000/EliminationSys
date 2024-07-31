@@ -9,6 +9,16 @@ This system is used to generate a competition bracket.
 Unzip the folder.
 PYTHON is REQUIRED to run the program.
 All other prerequisites are listed in the requirements.txt. Simply open command prompt and type (with the root directory of the file opened in the prompt of course):
+It is RECOMMENDED to utilize a virtual environment.
+To create a virtual environment:
+```
+python -m venv (Environment Name)
+```
+To utilize a virtual environment:
+```
+(Environment Name)\Scripts\Activate
+```
+To install requirements:
 ```
 pip install -r requirements.txt
 ```
