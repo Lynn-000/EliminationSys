@@ -1,0 +1,60 @@
+{% extends "index.html"%} {% block title %}Edit Teams{% endblock %} {% block content
+    %}
+    <form method="POST">
+      <h3 align="center">Edit teams</h3>
+      <p align = "center">For editing a team.</p>
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input
+          type="id"
+          class="form-control"
+          id="id"
+          name="id"
+          placeholder="Enter the team id for the team to be altered."
+        />
+      </div>
+      <div class="form-group">
+        <label for="TName">Team Name</label>
+        <input
+          type="TName"
+          class="form-control"
+          id="TName"
+          name="TName"
+          placeholder="Enter the new team name. Enter / if not subjected to altering."
+        />
+      </div> 
+      <div class="form-group">
+        <label for="School">School</label>
+        <input
+          type="School"
+          class="form-control"
+          id="School"
+          name="School"
+          placeholder="Enter the new School name. Enter / if not subjected to altering."
+        />
+      </div>  
+      <div class="form-group">
+        <label for="seedRank">Seed Rank</label>
+        <input
+          type="seedRank"
+          class="form-control"
+          id="seedRank"
+          name="seedRank"
+          placeholder="Enter the new seed rank. Enter 0 if not applicable, / if not subjected to altering."
+        />
+      </div>  
+      <div class="form-group">
+        <label for="Score">Score</label>
+        <input
+          type="Score"
+          class="form-control"
+          id="Score"
+          name="Score"
+          placeholder="Enter the new score. Enter / if not subjected to altering. NOTES: THE SCORE ADD UPS. ONLY USE FOR PENALTIES OR EXTRA POINT AWARDS (SOMEHOW IF NEEDED)."
+        />
+      </div>  
+      <br/>
+      <button type="submit" class = "btn btn-primary">Submit form</button>
+    </form>
+    {% endblock %}
+    

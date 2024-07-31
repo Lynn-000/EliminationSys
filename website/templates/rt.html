@@ -1,0 +1,19 @@
+{% extends "index.html"%} {% block title %}Remove Teams{% endblock %} {% block content
+    %}
+    <form method="POST">
+      <h3 align="center">Remove Teams</h3>
+      <p align = "center">Enter the team ID of the team to remove the team from the database.</p>
+      <div class="form-group">
+        <label for="id">Team ID</label>
+        <input
+          type="id"
+          class="form-control"
+          id="id"
+          name="id"
+          placeholder="Enter the team ID of the team to remove the team from the database."
+        />
+      </div>  
+      <button type="submit" class = "btn btn-primary">Submit form</button>
+    </form>
+    {% endblock %}
+    

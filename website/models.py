@@ -29,3 +29,5 @@ class Match(db.Model):
     T2Name = db.Column(db.String(256))
     T1Score = db.Column(db.Integer)
     T2Score = db.Column(db.Integer)
+    Ended = db.Column(db.Integer)
+    Winner = db.Column(db.String(256))

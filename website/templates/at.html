@@ -1,0 +1,40 @@
+{% extends "index.html"%} {% block title %}Add Teams{% endblock %} {% block content
+    %}
+    <form method="POST">
+      <h3 align="center">Add teams</h3>
+      <p align = "center">Add teams participating the competition to the system. All SAME participating school MUST shares the SAME name.</p>
+      <div class="form-group">
+        <label for="TName">Team Name</label>
+        <input
+          type="TName"
+          class="form-control"
+          id="TName"
+          name="TName"
+          placeholder="Enter the team name."
+        />
+      </div>  
+      <div class="form-group">
+        <label for="School">School Name</label>
+        <input
+          type="School"
+          class="form-control"
+          id="School"
+          name="School"
+          placeholder="Enter the school name. Ensure that all teams from the team's school are applying with the SAME school name."
+        />
+      </div>
+      <div class="form-group">
+        <label for="seedRank">Seed Rank</label>
+        <input
+          type="seedRank"
+          class="form-control"
+          id="seedRank"
+          name="seedRank"
+          placeholder="Enter the team's seed rank.(Semi-finalist in the previous match.) Enter 0 if not applicable."
+        />
+      </div>
+      <br/>
+      <button type="submit" class = "btn btn-primary">Submit form</button>
+    </form>
+    {% endblock %}
+    

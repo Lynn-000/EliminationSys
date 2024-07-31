@@ -4,11 +4,46 @@
 %}
 
 <h1>Competition Bracket</h1>
-<div class = "box">
-    {% for x in teams %}
-    <div class = words>{{ x.T1Name }} ({{ x.T1Score }})</div>
-    <div class = words>{{ x.T2Name }} ({{ x.T2Score }})</div>
-    <div class = push></div>
+{% set j = mindex %}
+<div class = "pagecontainer">
+    {% for i in range(j + 1) %}
+    {% if loop.first %}
+        <div class = "roundcontainer">
+        <div style = "font-family: Impact; white-space: nowrap; margin-left: 90px;font-size: 25px;color: rgba(40, 46, 120, 0.65);">Round 1</div>
+        {% for x in teams %}
+            <div class = "matchcontainer">
+                <div class = "box">
+                    <div class = "words">{{ x.T1Name }} ({{ x.T1Score }})</div>
+                </div>
+                <div class = "box">
+                    <div class = "words">{{ x.T2Name }} ({{ x.T2Score }})</div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <div class = "roundcontainer">
+            {% if not loop.last %}
+            <div style = "font-family: Impact; white-space: nowrap; margin-left: 90px;font-size: 25px;color:rgba(40, 46, 120, 0.65);align-self:flex-start;">Round {{i+1}}</div>
+            {% else %}
+            <div style = "font-family: Impact; white-space: nowrap; margin-left: 90px;font-size: 25px;color: #FFD700;">Champion</div>
+            {% endif %}
+            {% set k = (j - i) %}
+            {% for l in range(2 ** k) %}
+                {% if loop.index %2 == 0 %}
+                <div class = "matchcontainer">
+                    <div class = "box">
+                        <div class = "words">T.B.D</div>
+                    </div>
+                </div>
+                {% else %}
+                    <div class = "box">
+                        <div class = "words">T.B.D</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
     {% endfor %}
 </div>
 {% endblock %}

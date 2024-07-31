@@ -1,27 +1,34 @@
-.boxcontainer{
-display: flex;
-gap: 10px;
-align-items: center;
+.matchcontainer{
+    margin-bottom: 50px;
 }
 
 
 .box{
-    width: 125px;
-    margin: 10px;
-    height: 100px;
+    width: 275px;
+    height: 45px;
     background-color: #ffffff;
-    justify-content: center;
-    align-items: center;
+    border-color: rgba(201, 201, 201, 0.7);
+    border-style: solid;
     margin-bottom: 10px;
-
+    border-width: thin;
 }
 
+
+.roundcontainer{
+    margin-right: 250px;
+    min-width: 0px;
+    align-self: center
+}
+
+
+.pagecontainer{
+    display: flex;
+    align-items:flex-start;
+    gap: 200px;
+    justify-content: center;
+    page-break-inside: avoid;
+}
 
 .words{
     margin: 10px;
-    padding: 5px;
-}
-
-.push{
-    margin-bottom: 30px;
 }
