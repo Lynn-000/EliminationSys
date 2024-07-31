@@ -170,5 +170,6 @@ def matchscore():
             target = Match.query.filter_by(id = id).first()
             target.T1Score = T1Score
             target.T2Score = T2Score
+            db.session.commit()
             flash('Successfully updated the record.', category = "success")
     return render_template("mts.html", user = current_user)
