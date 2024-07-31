@@ -42,23 +42,23 @@ def viewteams():
 
 @login_required
 def update():
-    a = db.session.execute(text('''SELECT id, TName FROM Teams ORDER BY seedRank ASC NULLS LAST'''))
+    a = db.session.execute(text('''SELECT id, TName FROM Teams ORDER BY seedRank ASC NULLS LAST, seedRank IS NULL, Random()'''))
     c = a.fetchall()
     Bye = []
-    expo = int(math.log2(len(c))) + 1
-    print(pow(2, expo))
-    for i in range(pow(2, expo) - len(c)):
-        Bye.append(c[i])
-    k = 0
-    while k < len(Bye):
-        same = Match.query.filter_by(T1id = Bye[k][0]).first()
-        if same:
-            pass
-        else:
-            stmt = insert(Match).values(T1id = Bye[k][0], T2id = None, T1Name = Bye[k][1], T2Name = "Bye", T1Score = 0, T2Score = 0, Ended = 0)
-            db.session.execute(stmt)
-        k += 1
-    a = db.session.execute(text('''SELECT TA.id,TB.id, TA.TName, TB.TName FROM Teams TA, Teams TB WHERE TA.id < TB.id AND (TA.seedRank IS NOT NULL OR TB.seedRank IS NOT NULL)'''))
+    if 2 ** math.log2(len(c)) != 2 ** int(math.log2(len(c))):
+        expo = int(math.log2(len(c))) + 1
+        for i in range(pow(2, expo) - len(c)):
+            Bye.append(c[i])
+        k = 0
+        while k < len(Bye):
+            same = Match.query.filter_by(T1id = Bye[k][0]).first()
+            if same:
+                pass
+            else:
+                stmt = insert(Match).values(T1id = Bye[k][0], T2id = None, T1Name = Bye[k][1], T2Name = "Bye", T1Score = 0, T2Score = 0, Ended = 0)
+                db.session.execute(stmt)
+            k += 1
+    a = db.session.execute(text('''SELECT TA.id,TB.id, TA.TName, TB.TName FROM Teams TA, Teams TB WHERE TA.id < TB.id AND ((TA.seedRank IS NOT NULL AND TB.seedRank IS NULL) OR (TA.seedRank IS NULL AND TB.seedRank IS NOT NULL))'''))
     x = a.fetchall()
     insertprevdupl(x)
     a = db.session.execute(text('''SELECT TA.id, TB.id, TA.TName, TB.TName FROM Teams TA, Teams TB WHERE TA.id < TB.id AND TA.School <> TB.School'''))
